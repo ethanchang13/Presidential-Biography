@@ -158,6 +158,28 @@ body {
   text-align: center;
 }
 
+/* Fun fact box */
+.fact-box {
+  text-align: center;
+  padding: 2rem;
+  background: #2f3c3a;
+  margin: 3rem 2rem;
+  border-radius: 10px;
+}
+
+.fact-box button {
+  background: #00274d;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.fact-box button:hover {
+  background: #001f3f;
+}
+
 /* Footer */
 footer {
   background: #00274d;
