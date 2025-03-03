@@ -1,190 +1,374 @@
-/* Google fonts */
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;600;700&display=swap");
+/* Global Styles */
+:root {
+  --primary-color: #003366;
+  --secondary-color: #0066cc;
+  --accent-color: #ff9933;
+  --light-color: #f8f9fa;
+  --dark-color: #212529;
+  --text-color: #333333;
+}
 
 body {
-  font-family: "Inter", sans-serif;
-  background-color: #0a0e17;
-  color: white;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
+  font-family: "Georgia", serif;
+  color: var(--text-color);
+  line-height: 1.6;
 }
 
-/* Navbar */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Times New Roman", serif;
+  font-weight: 700;
+}
+
+a {
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+/* Navigation */
 .navbar {
-  position: fixed;
+  background-color: var(--primary-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.nav-link {
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0 0.5rem;
+}
+
+/* Hero Section */
+.hero-section {
+  background-image: linear-gradient(
+      135deg,
+      rgba(0, 51, 102, 0.85),
+      rgba(0, 0, 0, 0.8)
+    ),
+    url("https://www.jfklibrary.org/sites/default/files/2018-04/jfkwhp-kn-c19168.jpg");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 6rem 0;
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 -10px 20px -10px rgba(0, 0, 0, 0.5);
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  color: white;
-  padding: 15px 0;
-  z-index: 10;
-  transition: transform 0.3s ease-in-out;
+  right: 0;
+  height: 4px;
+  background: var(--accent-color);
+  z-index: 1;
 }
 
-.navbar.scrolled {
-  background: rgba(0, 0, 0, 0.9);
-}
-
-.container {
-  width: 85%;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  font-size: 1.8rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: white;
-  text-decoration: none;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 30px;
-}
-
-.nav-links a {
-  color: white;
-  font-weight: 600;
-  text-transform: uppercase;
-  font-size: 1rem;
-  transition: 0.3s ease-in-out;
-  text-decoration: none;
-}
-
-.nav-links a:hover {
-  color: #00d4ff;
-}
-
-/* Button */
-.btn-primary {
-  background: linear-gradient(135deg, #a3bbc0, #354c52);
-  padding: 12px 25px;
-  color: white;
-  font-weight: bold;
-  font-size: 1rem;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: 0.3s ease;
-}
-
-.btn-primary:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
-}
-
-/* Hero section */
-.hero {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+.hero-section h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   position: relative;
 }
 
-.hero-overlay {
+.hero-section h1::after {
+  content: "";
+  display: block;
+  width: 150px;
+  height: 3px;
+  background-color: var(--accent-color);
+  margin: 15px auto 0;
+}
+
+.hero-section .lead {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.quote-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: rgba(0, 51, 102, 0.6);
+  border-radius: 10px;
+  border-left: 4px solid var(--accent-color);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.quote-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+blockquote {
+  font-style: italic;
+  font-size: 1.5rem;
+}
+
+/* Page Header */
+.page-header {
+  background-image: linear-gradient(
+      135deg,
+      rgba(0, 51, 102, 0.85),
+      rgba(0, 0, 0, 0.8)
+    ),
+    url("https://www.jfklibrary.org/sites/default/files/2018-04/jfkwhp-kn-c29559.jpg");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 4rem 0;
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 -10px 20px -10px rgba(0, 0, 0, 0.5);
+}
+
+.page-header::before {
+  content: "";
   position: absolute;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(10px);
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--accent-color);
+  z-index: 1;
 }
 
-.hero-content {
+.page-header h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   position: relative;
-  z-index: 10;
 }
 
-.hero-content h1 {
-  font-size: 4rem;
-  font-weight: 900;
-  background: linear-gradient(45deg, #32b6d0, #14375a);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.page-header h1::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 3px;
+  background-color: var(--accent-color);
+  margin: 10px auto 0;
 }
 
-.hero-content h2 {
-  font-size: 1.8rem;
-  font-weight: 300;
+.page-header .lead {
+  font-size: 1.25rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
-.hero-content p {
-  font-size: 1.2rem;
-  max-width: 600px;
-  margin: 0 auto 20px;
+/* Timeline */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/* Biography */
-.biography {
-  display: flex;
-  padding: 4rem 2rem;
+.timeline::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  background-color: var(--primary-color);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
 }
 
-.bio-content {
-  flex: 1;
-  padding: 2rem;
+.timeline-item {
+  padding: 10px 40px;
+  position: relative;
+  width: 50%;
+  box-sizing: border-box;
 }
 
-.bio-image img {
-  width: 100%;
-  border-radius: 10px;
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+.timeline-item:nth-child(odd) {
+  left: 0;
 }
 
-/* Accomplishments */
-.accomplishments {
-  padding: 4rem 2rem;
-  background: #fff;
+.timeline-item:nth-child(even) {
+  left: 50%;
 }
 
-.grid {
+.timeline-content {
+  padding: 20px 30px;
+  background-color: white;
+  position: relative;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.timeline-content h3 {
+  color: var(--primary-color);
+  margin-top: 0;
+}
+
+.timeline-content::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background-color: white;
+  border: 4px solid var(--accent-color);
+  border-radius: 50%;
+  top: 15px;
+  z-index: 1;
+}
+
+.timeline-item:nth-child(odd) .timeline-content::after {
+  right: -17px;
+}
+
+.timeline-item:nth-child(even) .timeline-content::after {
+  left: -17px;
+}
+
+/* Quiz Section */
+.quiz-section {
+  background-color: white;
+  padding: 3rem 0;
+}
+
+#question-container {
+  background-color: white;
+}
+
+.btn-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(2, auto);
+  gap: 10px;
+  margin: 20px 0;
 }
 
-.card {
-  background: #00274d;
-  color: white;
-  padding: 1.5rem;
-  border-radius: 8px;
+#progress-indicator {
+  font-weight: bold;
+  align-self: center;
+}
+
+/* Cards and Sections */
+.achievement-card,
+.challenge-card,
+.biography-card {
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.achievement-card:hover,
+.challenge-card:hover,
+.biography-card:hover {
+  transform: translateY(-5px);
+}
+
+.challenge-card {
+  background-color: white;
+  border-left: 5px solid var(--accent-color);
+}
+
+.image-caption {
+  font-size: 0.85rem;
+  color: #6c757d;
   text-align: center;
+  font-style: italic;
 }
 
-/* Fun fact box */
-.fact-box {
-  text-align: center;
-  padding: 2rem;
-  background: #2f3c3a;
-  margin: 3rem 2rem;
-  border-radius: 10px;
+/* Works Cited Page */
+.works-cited-section,
+.image-sources-section {
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-.fact-box button {
-  background: #00274d;
-  color: white;
-  padding: 0.8rem 1.5rem;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
+.citation-item {
+  padding: 1rem;
+  border-left: 3px solid var(--accent-color);
+  margin-bottom: 1rem;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.fact-box button:hover {
-  background: #001f3f;
+.citation-item p {
+  margin-bottom: 0;
+}
+
+.citation-item a {
+  word-break: break-all;
 }
 
 /* Footer */
 footer {
-  background: #00274d;
+  background-color: var(--dark-color);
+}
+
+footer a {
+  color: #adb5bd;
+}
+
+footer a:hover {
   color: white;
-  text-align: center;
-  padding: 1rem 0;
-  margin-top: 3rem;
+  text-decoration: none;
+}
+
+footer ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+footer li {
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-section h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-section .lead {
+    font-size: 1.25rem;
+  }
+
+  blockquote {
+    font-size: 1.25rem;
+  }
+
+  .timeline::after {
+    left: 31px;
+  }
+
+  .timeline-item {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+
+  .timeline-item:nth-child(even) {
+    left: 0;
+  }
+
+  .timeline-content::after {
+    left: -17px;
+  }
+}
+
+@media (max-width: 576px) {
+  .btn-grid {
+    grid-template-columns: 1fr;
+  }
 }
